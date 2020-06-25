@@ -30,7 +30,7 @@ linkedin_username: derek-howard-03064765
 github_username:  djhoward12
 
 # Build settings
-theme: jekyll-theme-hacker
+theme: minima
 plugins:
   - jekyll-feed
 
