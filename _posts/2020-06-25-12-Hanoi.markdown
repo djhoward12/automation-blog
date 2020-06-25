@@ -32,11 +32,51 @@ of one move per second, the monks at Benares will be at work for approximately
 **I wrote the solutions to the problem in python and rust.** 
 
 {% highlight python %}
+def hanoi(discs, src, tmp, dest):
+    if discs == 1:
+       print ('Move disc 1 from peg {} to peg {}.'.format(src, dest) )
+       return
+    
+    hanoi(discs - 1, src, dest, tmp)
+    print ('Move disc {} from peg {} to peg {}.'.format(discs, src, dest) )  
+    hanoi(discs - 1, tmp, src, dest)
 
+    
+discs = int(input('Enter the number of discs: '))
+hanoi(discs, 'A', 'B', 'C')
 {% endhighlight %}
 
 {% highlight rust %}
+use std::io;
 
+fn main() {
+
+    println!("Please input the number of discs:");
+
+    let mut discs = String::new();
+
+    io::stdin().read_line(&mut discs)
+        .expect("Failed to read line");
+
+    let discs: u32 = discs.trim().parse().expect("Please type a number!");
+
+    println!("You entered: {} discs", discs);
+
+   hanoi(discs, "A", "B", "C");
+}
+
+fn hanoi(discs: u32, src: &str, tmp: &str, dest: &str) {
+    
+    
+    if discs == 1 {
+        println!("Move disc 1 from peg {} to peg {}",src, dest);
+        return;
+    }
+    hanoi(discs -1, src, dest, tmp);
+    println!("Move disc {} from peg {} to peg {}", discs, src, dest);
+    hanoi(discs -1, tmp, src, dest);
+
+}
 {% endhighlight %}
 
 [Algorithms]: https://jeffe.cs.illinois.edu/teaching/algorithms/
