@@ -5,11 +5,11 @@ date:   2020-06-24 03:16:34 -0400
 categories: jekyll update
 ---
 
-Each week the A&I team completes code challenges. This week we will be doing the following: 
+Each week the A&I team completes code challenges. This week we will be doing the following:
 
 *Write a function that returns the verses to the '12 days of Christmas'. Sounds easy right? The function must take two arguments- start day and end day, and return a list of the verses as a string for each day.*
 
-Most A&I members will attempt the exercise in python, but I decided to try it out in rust. My code is below. 
+Most A&I members will attempt the exercise in python, but I decided to try it out in rust. My code is below.
 
 {% highlight rust %}
 fn main() {
