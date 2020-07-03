@@ -5,7 +5,7 @@ date:   2020-07-03 04:36:34 -0400
 categories: jekyll update
 ---
 
-**Stephen Follett asked for the ability to ssh from Netbox directly to a network device. We thought it was a great idea and figured out how to make it happen. When you log into Netbox now you will see an Orange SSH button on the top right of a router device type. Currently only doing this for routers, but plan to add switches soon.**
+**AIS asked for the ability to ssh from Netbox directly to a network device. We thought it was a great idea and figured out how to make it happen. When you log into Netbox now you will see an Orange SSH button on the top right of a router device type. Currently only doing this for routers, but plan to add switches soon.**
 
 ![Netbox-Device-View]({{ site.url }}/assets/Device_view.JPG =1200x)
 
