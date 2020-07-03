@@ -7,14 +7,14 @@ categories: jekyll update
 
 **Stephen Follett asked for the ability to ssh from Netbox directly to a network device. We thought it was a great idea and figured out how to make it happen. When you log into Netbox now you will see an Orange SSH button on the top right of a router device type. Currently only doing this for routers, but plan to add switches soon.**
 
-![Netbox-Device-View]({{ site.url }}/assets/Device_view.JPG)
+![Netbox-Device-View]({{ site.url }}/assets/Device_view.JPG =1200x)
 
 **Our original plan was to add a custom field on the device which would've had ssh:// with the primary IP of the device in it. In order to accomplish this we would have add to do API gets to the device and append the IP to ssh:// for each device. I decided to do some research and found a better option using custom links. Under the admin panel you can create custom links and assign them to specific things. For this example I assigned them to dcim/device and then used jinja conditionals to make sure the button only showed up on MFS routers. Below is the image showing how this button is configured.**
 
 **Content type specifics the page in netbox the link is going to show up on and then we narrow it down to devices that are assigned the "Cisco Based" platform as long as they are not a switch in the Text: block. The URL block contains the magic that makes this link dynamic. When working with custom links in Netbox you can use jinja variable syntax to access device attributes from the Netbox Postgres database. What this link is doing is appending the object or device primary_ip field and taking the address value of that field and appending it to ssh://. This is really cool, because if that device IP ever changes in netbox you only make the change one place (IPAM→IP Address) and the link will update automatically.**
 
-![Netbox-Custom-Link]({{ site.url }}/assets/custom_link_config.JPG)
+![Netbox-Custom-Link]({{ site.url }}/assets/custom_link_config.JPG =1000x)
 
 **I have this working at work on Chrome if you have Winscp and Putty installed or on Firefox with SecureCRT. There is a change you have to make to Firefox about:config settings to make it work. Set the value in the image below to False. If anyone else has some great ideas like this one let us know and we will do our best to get it into the tool set.**
 
-![Firefox-Setting]({{ site.url }}/assets/firefox_setting.JPG)
+![Firefox-Setting]({{ site.url }}/assets/firefox_setting.JPG =1263x)
