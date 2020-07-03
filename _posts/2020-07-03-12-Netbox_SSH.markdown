@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Hanoi"
-date:   2020-06-25 04:04:34 -0400
+title:  "Netbox SSH"
+date:   2020-07-03 04:36:34 -0400
 categories: jekyll update
 ---
 
