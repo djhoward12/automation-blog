@@ -13,8 +13,8 @@ categories: jekyll update
 
 **Content type specifics the page in netbox the link is going to show up on and then we narrow it down to devices that are assigned the "Cisco Based" platform as long as they are not a switch in the Text: block. The URL block contains the magic that makes this link dynamic. When working with custom links in Netbox you can use jinja variable syntax to access device attributes from the Netbox Postgres database. What this link is doing is appending the object or device primary_ip field and taking the address value of that field and appending it to ssh://. This is really cool, because if that device IP ever changes in netbox you only make the change one place (IPAM→IP Address) and the link will update automatically.**
 
-ADD IMAGE HERE
+![Netbox-Custom-Link](/assets/custom_link_config.JPG)
 
 **I have this working at work on Chrome if you have Winscp and Putty installed or on Firefox with SecureCRT. There is a change you have to make to Firefox about:config settings to make it work. Set the value in the image below to False. If anyone else has some great ideas like this one let us know and we will do our best to get it into the tool set.**
 
-ADD IMAGE HERE
+![Firefox-Setting](/assets/firefox_setting.JPG)
