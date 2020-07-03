@@ -7,7 +7,7 @@ categories: jekyll update
 
 **Stephen Follett asked for the ability to ssh from Netbox directly to a network device. We thought it was a great idea and figured out how to make it happen. When you log into Netbox now you will see an Orange SSH button on the top right of a router device type. Currently only doing this for routers, but plan to add switches soon.**
 
-![Netbox-Device-View]({{ site.url }}/assets/Device_view.JPG)
+![Netbox-Device-View]({{ site.url }}/Device_view.JPG)
 
 **Our original plan was to add a custom field on the device which would've had ssh:// with the primary IP of the device in it. In order to accomplish this we would have add to do API gets to the device and append the IP to ssh:// for each device. I decided to do some research and found a better option using custom links. Under the admin panel you can create custom links and assign them to specific things. For this example I assigned them to dcim/device and then used jinja conditionals to make sure the button only showed up on MFS routers. Below is the image showing how this button is configured.**
 
